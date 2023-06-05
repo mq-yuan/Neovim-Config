@@ -27,4 +27,8 @@ return require('packer').startup(function(use)
 
   -- Vim Airline
   use( 'vim-airline/vim-airline')
+
+  -- FZF
+  use( 'junegunn/fzf')--, {'do': { -> fzf#installl()}})
+  use( 'junegunn/fzf.vim')
 end)

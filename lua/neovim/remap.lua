@@ -22,3 +22,7 @@ vim.keymap.set("n", "<up>", ":res+5<CR>")
 vim.keymap.set("n", "<down>", ":res-5<CR>")
 vim.keymap.set("n", "<left>", ":vertical res-5<CR>")
 vim.keymap.set("n", "<right>", ":vertical res+5<CR>")
+
+-- FZF
+vim.keymap.set("n", "<leader>pf", vim.cmd.Files)
+vim.keymap.set("n", "<leader>pg", vim.cmd.Ag)
