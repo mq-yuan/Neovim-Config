@@ -7,7 +7,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
- use {
+  use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
@@ -29,6 +29,13 @@ return require('packer').startup(function(use)
   use( 'vim-airline/vim-airline')
 
   -- FZF
-  use( 'junegunn/fzf')--, {'do': { -> fzf#installl()}})
+  use( 'junegunn/fzf')
   use( 'junegunn/fzf.vim')
+
+  -- leap
+  use( 'ggandor/leap.nvim')
+  use( 'tpope/vim-repeat')
+
+  -- comment
+  use( 'tpope/vim-commentary')
 end)

@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/neovim/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
+  ["leap.nvim"] = {
+    loaded = true,
+    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
+  },
   nerdtree = {
     loaded = true,
     path = "/home/neovim/.local/share/nvim/site/pack/packer/start/nerdtree",
@@ -123,6 +128,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/neovim/.local/share/nvim/site/pack/packer/start/vim-closer",
     url = "https://github.com/rstacruz/vim-closer"
+  },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
+  },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
   }
 }
 
