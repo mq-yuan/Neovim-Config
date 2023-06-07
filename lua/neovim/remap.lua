@@ -26,3 +26,6 @@ vim.keymap.set("n", "<right>", ":vertical res+5<CR>")
 -- FZF
 vim.keymap.set("n", "<leader>pf", vim.cmd.Files)
 vim.keymap.set("n", "<leader>pg", vim.cmd.Ag)
+
+-- lazygit
+vim.keymap.set("n", "<leader>lg", function() vim.cmd("sp") vim.cmd("res+5") vim.cmd("term time lazygit") end)
