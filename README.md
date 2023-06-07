@@ -9,12 +9,11 @@ This project is originally intended for storing my Neovim configuration files. H
 ` sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" `
 4. install powerlevel10k
 ` git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k `
-[5. install Homebre
+5. install Homebre
 ``` sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 export all=http://$HOST:$PORT
 ```
-]
-5. install lazygit
+6. install lazygit
 `brew install jesseduffield/lazygit/lazygit`
