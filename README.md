@@ -14,6 +14,7 @@ This project is originally intended for storing my Neovim configuration files. H
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 export all=http://$HOST:$PORT
-```]
+```
+]
 5. install lazygit
 `brew install jesseduffield/lazygit/lazygit`
