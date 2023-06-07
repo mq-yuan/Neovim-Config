@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
 
   -- Colorscheme
   use({ 'rose-pine/neovim', as = 'rose-pine' })
-  vim.cmd('colorscheme rose-pine')
+  -- vim.cmd('colorscheme rose-pine')
 
   -- FileTree
   use( 'preservim/nerdtree')
@@ -38,4 +38,7 @@ return require('packer').startup(function(use)
 
   -- comment
   use( 'tpope/vim-commentary')
+
+  -- Tagbar
+  use( 'preservim/tagbar')
 end)

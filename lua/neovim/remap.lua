@@ -29,3 +29,10 @@ vim.keymap.set("n", "<leader>pg", vim.cmd.Ag)
 
 -- lazygit
 vim.keymap.set("n", "<leader>lg", function() vim.cmd("sp") vim.cmd("res+5") vim.cmd("term time lazygit") end)
+
+-- Tagbar
+vim.keymap.set("n", "<F8>", vim.cmd.TagbarToggle)
+
+-- Nerdtree
+vim.keymap.set("n", "tt", vim.cmd.NERDTreeToggle)
+

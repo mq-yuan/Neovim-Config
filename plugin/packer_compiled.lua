@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/home/neovim/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
   },
+  tagbar = {
+    loaded = true,
+    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/tagbar",
+    url = "https://github.com/preservim/tagbar"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/neovim/.local/share/nvim/site/pack/packer/start/telescope.nvim",
