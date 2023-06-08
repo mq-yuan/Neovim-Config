@@ -23,16 +23,6 @@ vim.keymap.set("n", "<down>", ":res-5<CR>")
 vim.keymap.set("n", "<left>", ":vertical res-5<CR>")
 vim.keymap.set("n", "<right>", ":vertical res+5<CR>")
 
--- FZF
-vim.keymap.set("n", "<leader>pf", vim.cmd.Files)
-vim.keymap.set("n", "<leader>pg", vim.cmd.Ag)
-
 -- lazygit
 vim.keymap.set("n", "<leader>lg", function() vim.cmd("sp") vim.cmd("res+5") vim.cmd("term time lazygit") end)
-
--- Tagbar
-vim.keymap.set("n", "<F8>", vim.cmd.TagbarToggle)
-
--- Nerdtree
-vim.keymap.set("n", "tt", vim.cmd.NERDTreeToggle)
 
