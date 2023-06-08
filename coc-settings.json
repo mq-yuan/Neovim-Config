@@ -1,11 +1,14 @@
 {
     "coc.preferences.extensionUpdateCheck": "weekly",
-    "suggest.noselect": false, 
+    "suggest.noselect": false,
     "suggest.enablePreselect": false,
     "coc.preferences.formatOnType": true,
+    "coc.preferences.formatOnSave": true,
     "lua.enable": true,
     "python.formatting.provider": "black",
     "python.linting.enabled": true,
     "python.linting.pyflakesEnabled": true,
-    "python.linting.mypyEnabled": true
+    "python.linting.mypyEnabled": true,
+    "rust-analyzer.enable": true,
+    "rust-analyzer.checkOnSave": true
 }
