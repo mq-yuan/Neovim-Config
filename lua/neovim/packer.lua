@@ -4,41 +4,45 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
-  -- Simple plugins can be specified as strings
-  use 'rstacruz/vim-closer'
+    -- Simple plugins can be specified as strings
+    use 'rstacruz/vim-closer'
 
-  -- Colorscheme
-  use({ 'rose-pine/neovim', as = 'rose-pine' })
-  -- vim.cmd('colorscheme rose-pine')
+    -- Colorscheme
+    use({ 'rose-pine/neovim', as = 'rose-pine' })
+    -- vim.cmd('colorscheme rose-pine')
 
-  -- FileTree
-  use( 'preservim/nerdtree')
+    -- FileTree
+    use('preservim/nerdtree')
 
-  -- UndoTree
-  use( 'mbbill/undotree')
+    -- UndoTree
+    use('mbbill/undotree')
 
-  -- Vim Airline
-  use( 'vim-airline/vim-airline')
+    -- Vim Airline
+    use('vim-airline/vim-airline')
 
-  -- FZF
-  use( 'junegunn/fzf')
-  use( 'junegunn/fzf.vim')
+    -- FZF
+    use('junegunn/fzf')
+    use('junegunn/fzf.vim')
 
-  -- leap
-  use( 'ggandor/leap.nvim')
-  use( 'tpope/vim-repeat')
+    -- leap
+    use('ggandor/leap.nvim')
+    use('tpope/vim-repeat')
 
-  -- comment
-  use( 'tpope/vim-commentary')
+    -- comment
+    use('tpope/vim-commentary')
 
-  -- Tagbar
-  use( 'preservim/tagbar')
+    -- Tagbar
+    use('preservim/tagbar')
 
-  -- COC
-  use {'neoclide/coc.nvim', branch = 'release'}
+    -- COC
+    use { 'neoclide/coc.nvim', branch = 'release' }
 
+    -- indent-blankline
+    use('lukas-reineke/indent-blankline.nvim')
+
+    -- treesitter
+    use('nvim-treesitter/nvim-treesitter')
 end)
-
