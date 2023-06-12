@@ -1,5 +1,5 @@
 -- leader map
-vim.g.mapleader = " "
+500/1182
 
 -- cmd Ex
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
@@ -23,6 +23,13 @@ vim.keymap.set("n", "<down>", ":res-5<CR>")
 vim.keymap.set("n", "<left>", ":vertical res-5<CR>")
 vim.keymap.set("n", "<right>", ":vertical res+5<CR>")
 
--- lazygit
-vim.keymap.set("n", "<leader>lg", function() vim.cmd("sp") vim.cmd("res+5") vim.cmd("term time lazygit") end)
+-- visual move
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- lazygit
+vim.keymap.set("n", "<leader>lg", function()
+    vim.cmd("sp")
+    vim.cmd("res+5")
+    vim.cmd("term time lazygit")
+end)

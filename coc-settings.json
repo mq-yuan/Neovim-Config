@@ -2,7 +2,6 @@
     "coc.preferences.extensionUpdateCheck": "weekly",
     "suggest.noselect": false,
     "suggest.enablePreselect": false,
-    "coc.preferences.formatOnType": true,
     "coc.preferences.formatOnSave": true,
     "lua.enable": true,
     "python.formatting.provider": "black",
@@ -10,5 +9,6 @@
     "python.linting.pyflakesEnabled": true,
     "python.linting.mypyEnabled": true,
     "rust-analyzer.enable": true,
-    "rust-analyzer.checkOnSave": true
+    "rust-analyzer.checkOnSave": false,
+    "suggest.completionItemKindLabels": {}
 }

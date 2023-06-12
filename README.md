@@ -21,7 +21,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 ``` sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
-export all_proxy=http://$HOST:$PORT
+export all_proxy=sock5://$HOST:$PORT
 ```
 
 5. install neovim
