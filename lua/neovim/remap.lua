@@ -1,5 +1,5 @@
 -- leader map
-500/1182
+vim.g.mapleader = " "
 
 -- cmd Ex
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
@@ -29,7 +29,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- lazygit
 vim.keymap.set("n", "<leader>lg", function()
-    vim.cmd("sp")
-    vim.cmd("res+5")
-    vim.cmd("term time lazygit")
+	vim.cmd("sp")
+	vim.cmd("res+5")
+	vim.cmd("term time lazygit")
 end)
