@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/neovim/.local/share/nvim/site/pack/packer/start/tagbar",
     url = "https://github.com/preservim/tagbar"
   },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
   undotree = {
     loaded = true,
     path = "/home/neovim/.local/share/nvim/site/pack/packer/start/undotree",

@@ -26,10 +26,16 @@ vim.keymap.set("n", "<right>", ":vertical res+5<CR>")
 -- visual move
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- replace
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- find
+vim.keymap.set("n", "<leader>ff", [[:/<C-r><C-w><CR>]])
+vim.keymap.set("n", "<leader>FF", [[:?<C-r><C-w><CR>]])
 
 -- lazygit
 vim.keymap.set("n", "<leader>lg", function()
-	vim.cmd("sp")
-	vim.cmd("res+5")
-	vim.cmd("term time lazygit")
+    vim.cmd("sp")
+    vim.cmd("res+5")
+    vim.cmd("term time lazygit")
 end)
