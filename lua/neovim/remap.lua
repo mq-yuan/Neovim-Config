@@ -4,6 +4,10 @@ vim.g.mapleader = " "
 -- cmd Ex
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- cmd Esc
+vim.keymap.set("n", ";", ":")
+vim.keymap.set("n", ":", ";")
+
 -- move config
 vim.keymap.set("n", "J", "5j")
 vim.keymap.set("n", "K", "5k")
