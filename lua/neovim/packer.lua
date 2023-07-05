@@ -11,7 +11,7 @@ return require('packer').startup(function(use)
     use 'rstacruz/vim-closer'
 
     -- Colorscheme
-    use({ 'rose-pine/neovim', as = 'rose-pine' })
+    -- use({ 'rose-pine/neovim', as = 'rose-pine' })
     use({ 'folke/tokyonight.nvim', as = 'tokyonight' })
 
     -- FileTree
@@ -45,4 +45,7 @@ return require('packer').startup(function(use)
 
     -- treesitter
     use('nvim-treesitter/nvim-treesitter')
+
+    -- fun
+    use('Eandrju/cellular-automaton.nvim')
 end)
