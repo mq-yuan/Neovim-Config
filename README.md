@@ -29,14 +29,33 @@ export all_proxy=sock5://$HOST:$PORT
 brew install neovim
 ```
 
-6. install lazygit
-```sh 
-brew install jesseduffield/lazygit/lazygit
-```
-
-7. zsh plugin
+6. zsh plugin
 ```sh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
+
+7. nodejs
+```sh
+wget -qO- --no-check-certificate  https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+```
+add to ~/.zshrc
+``` sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+```
+```sh
+nvm install --lts
+```
+if  ```Version '' (with LTS filter) not found - try `nvm ls-remote --lts` to browse available versions``` you can do that
+create `~/.curlrc`, add one line `-k`, then `nvm install --lts`
+
+8. go
+
+9. install lazygit
+```sh 
+brew install jesseduffield/lazygit/lazygit
+```
+11. lua
 
