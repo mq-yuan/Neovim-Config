@@ -23,6 +23,11 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 export all_proxy=sock5://$HOST:$PORT
 ```
+if you need `curl: (60)ssl`, you can try:
+```bash
+sudo vim /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/utils/curl.rb
+```
+add `'-k'` to args=[]
 
 5. install neovim
 ``` sh
