@@ -27,11 +27,12 @@ if you need `curl: (60)ssl`, you can try:
 ```bash
 sudo vim /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/utils/curl.rb
 ```
-add `'-k'` to args=[]
+add `'-k'` to `args=[]`
 
 5. install neovim
 ``` sh
 brew install neovim
+sudo add-apt-repository ppa:neovim-ppa/stable
 ```
 
 6. zsh plugin
