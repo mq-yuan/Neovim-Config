@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/neovim/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/neovim/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/neovim/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/neovim/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/neovim/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/home/ymq/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/ymq/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/ymq/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/ymq/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/ymq/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -76,82 +76,82 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["cellular-automaton.nvim"] = {
     loaded = true,
-    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/cellular-automaton.nvim",
+    path = "/home/ymq/.local/share/nvim/site/pack/packer/start/cellular-automaton.nvim",
     url = "https://github.com/Eandrju/cellular-automaton.nvim"
   },
   ["coc.nvim"] = {
     loaded = true,
-    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/coc.nvim",
+    path = "/home/ymq/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
   fzf = {
     loaded = true,
-    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/fzf",
+    path = "/home/ymq/.local/share/nvim/site/pack/packer/start/fzf",
     url = "https://github.com/junegunn/fzf"
   },
   ["fzf.vim"] = {
     loaded = true,
-    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/fzf.vim",
+    path = "/home/ymq/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
-    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    path = "/home/ymq/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["leap.nvim"] = {
     loaded = true,
-    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/leap.nvim",
+    path = "/home/ymq/.local/share/nvim/site/pack/packer/start/leap.nvim",
     url = "https://github.com/ggandor/leap.nvim"
   },
   nerdtree = {
     loaded = true,
-    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/nerdtree",
+    path = "/home/ymq/.local/share/nvim/site/pack/packer/start/nerdtree",
     url = "https://github.com/preservim/nerdtree"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    path = "/home/ymq/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "/home/ymq/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   tagbar = {
     loaded = true,
-    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/tagbar",
+    path = "/home/ymq/.local/share/nvim/site/pack/packer/start/tagbar",
     url = "https://github.com/preservim/tagbar"
   },
   tokyonight = {
     loaded = true,
-    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/tokyonight",
+    path = "/home/ymq/.local/share/nvim/site/pack/packer/start/tokyonight",
     url = "https://github.com/folke/tokyonight.nvim"
   },
   undotree = {
     loaded = true,
-    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/undotree",
+    path = "/home/ymq/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
   ["vim-airline"] = {
     loaded = true,
-    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/vim-airline",
+    path = "/home/ymq/.local/share/nvim/site/pack/packer/start/vim-airline",
     url = "https://github.com/vim-airline/vim-airline"
   },
   ["vim-closer"] = {
     loaded = true,
-    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/vim-closer",
+    path = "/home/ymq/.local/share/nvim/site/pack/packer/start/vim-closer",
     url = "https://github.com/rstacruz/vim-closer"
   },
   ["vim-commentary"] = {
     loaded = true,
-    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    path = "/home/ymq/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-repeat"] = {
     loaded = true,
-    path = "/home/neovim/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    path = "/home/ymq/.local/share/nvim/site/pack/packer/start/vim-repeat",
     url = "https://github.com/tpope/vim-repeat"
   }
 }

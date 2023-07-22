@@ -39,7 +39,7 @@ vim.keymap.set("n", "<leader>FF", [[:?<C-r><C-w><CR>]])
 
 -- lazygit
 vim.keymap.set("n", "<leader>lg", function()
-    vim.cmd("sp")
-    vim.cmd("res+5")
+    -- vim.cmd("sp")
+    -- vim.cmd("res+5")
     vim.cmd("term time lazygit")
 end)
