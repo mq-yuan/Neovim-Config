@@ -1,4 +1,4 @@
-vim.g.coc_global_extensions = { 'coc-json', 'coc-vimlsp', 'coc-lua', 'coc-clangd', 'coc-pyright' }
+vim.g.coc_global_extensions = { 'coc-json', 'coc-vimlsp', 'coc-lua', 'coc-clangd', 'coc-pyright', 'coc-rust-analyzer' }
 
 vim.opt.updatetime = 100
 vim.opt.hidden = true
@@ -46,6 +46,8 @@ end
 
 vim.keymap.set("n", "<leader>m", "<CMD>lua _G.show_docs()<CR>", { silent = true })
 
+
+-- manner move
 local _opts = { silent = true, nowait = true, expr = true }
 vim.keymap.set("n", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', _opts)
 vim.keymap.set("n", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', _opts)
