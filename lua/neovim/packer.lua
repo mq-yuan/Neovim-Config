@@ -14,8 +14,12 @@ return require('packer').startup(function(use)
     -- use({ 'rose-pine/neovim', as = 'rose-pine' })
     use({ 'folke/tokyonight.nvim', as = 'tokyonight' })
 
-    -- FileTree
-    use('preservim/nerdtree')
+    -- -- FileTree
+    -- use('preservim/nerdtree')
+    use('nvim-tree/nvim-tree.lua')
+
+    -- icons
+    use('nvim-tree/nvim-web-devicons')
 
     -- UndoTree
     use('mbbill/undotree')
@@ -40,11 +44,23 @@ return require('packer').startup(function(use)
     -- COC
     use { 'neoclide/coc.nvim', branch = 'release' }
 
-    -- indent-blankline
-    use('lukas-reineke/indent-blankline.nvim')
+    -- -- indent-blankline
+    -- use('lukas-reineke/indent-blankline.nvim')
+
+    -- hlchunk
+    use { "shellRaining/hlchunk.nvim" }
+
 
     -- treesitter
     use('nvim-treesitter/nvim-treesitter')
+    -- treesitter-context
+    use('nvim-treesitter/nvim-treesitter-context')
+
+    -- surround
+    use({
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    })
 
     -- fun
     use('Eandrju/cellular-automaton.nvim')
