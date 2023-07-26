@@ -2,35 +2,118 @@
 This project is originally intended for storing my Neovim configuration files. However, since the configuration process requires several additional dependencies, this project will also include some configuration-related information beyond Neovim.
 
 ## Replace domestic sources(Optional)
-can ref [https://zhuanlan.zhihu.com/p/61228593]
+Ref [https://zhuanlan.zhihu.com/p/61228593]
 
 ## Install ZSH
 You need to set peoxy(You can find 'HOSTIP and PORT' in the LAN option in 'clash for windows') :
 ```sh
 export ALL_PROXY="198.18.0.1:7890"
 ```
-download zsh
+
+**Install zsh**
+
 ```sh
 sudo pacman -S zsh
+```
+OR
+```sh
 sudo apt install zsh
 ```
 
-install oh-my-zsh
+**Install starship**
+
+If you want to learn more, [startship](https://starship.rs/) is all you need.
 ```sh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
+curl -sS https://starship.rs/install.sh | sh
 ```
 
-install powerlevel10k
-``` sh
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k 
+Add the following to the end of `~/.zshrc`:
+```sh
+eval "$(starship init zsh)"
 ```
 
-zsh plugin
+**Config theme**
+
+[startship Presets](https://starship.rs/presets/) has many beautiful presets.
+
+*A Nerd Font (opens new window)installed and enabled in your terminal(suggest [FiraCode Nerd Font Mono](https://www.nerdfonts.com/font-downloads)).*
 ```sh
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+starship preset tokyo-night -o ~/.config/starship.toml
 ```
-Finally, you should modify `~/.zshrc`
+
+**zsh plugin**
+
+[top-popular-zsh-plugins](https://safjan.com/top-popular-zsh-plugins-on-github-2023/#frameworks) can help you find most popular plugin.
+
+There are some plugins I like.
+
+[thefuck](https://github.com/nvbn/thefuck)
+
+On Ubuntu / Mint, install The Fuck with the following commands:
+```sh
+sudo apt update
+sudo apt install python3-dev python3-pip python3-setuptools
+pip3 install thefuck --user
+```
+Add the following to the end of `~/.zshrc`:
+```sh
+eval $(thefuck --alias)
+```
+
+[fzf](https://github.com/junegunn/fzf)
+
+"git clone" this repository to any directory and run install script.
+```sh
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+```
+
+[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+
+Git Clone is recommended Manual
+```sh
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+```
+Add the following to your `.zshrc`:
+```sh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+```
+
+[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+
+Git Clone is recommended Manual
+```sh
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+```
+
+[exa](https://github.com/ogham/exa)
+
+Use the cargo install command:
+```sh
+cargo install exa
+```
+It is recommend to alias `exa` to `ls`
+```sh
+# Add  the following to your .zshrc
+alias ls="exa"
+alias ll="exa -l"
+```
+
+[zoxide](https://github.com/ajeetdsouza/zoxide)
+
+Cargo is recommed:
+```sh
+cargo install zoxide --locked
+```
+OR via the install script:
+```sh
+curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+```
+Add this to the end of your config file (usually `~/.zshrc`):
+```sh
+eval "$(zoxide init zsh)"
+```
 
 ## nodejs
 download nvm 
@@ -56,16 +139,11 @@ install Homebre
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 ```
-if you need `curl: (60)ssl`, you can try:
-```bash
-sudo vim /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/utils/curl.rb
-```
-add `'-k'` to `args=[]`
-`brew install --force gcc` can help you
+`-k` and `--force` maybe can help you
 
 ## lua and go
 
-download go for [https://go.dev/dl/]
+[go](https://go.dev/dl/)
 
 ```sh
 sudo  rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.20.6.linux-amd64.tar.gz
@@ -94,6 +172,9 @@ sudo make install
 install neovim
 ``` sh
 brew install neovim
+```
+OR
+```sh
 sudo add-apt-repository ppa:neovim-ppa/stable
 ```
 
@@ -103,17 +184,6 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
-install fzf
-```sh
-sudo apt install fzf
-sudo  apt-get install silversearcher-ag
-```
-
-install lazygit
-
-Finally, git clone this repositories
-
-
 install lazygit
 ```sh 
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
@@ -122,3 +192,4 @@ tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 ```
 
+Finally, git clone this repositories
