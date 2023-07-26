@@ -44,11 +44,11 @@ return require('packer').startup(function(use)
     -- COC
     use { 'neoclide/coc.nvim', branch = 'release' }
 
-    -- -- indent-blankline
-    -- use('lukas-reineke/indent-blankline.nvim')
+    -- indent-blankline
+    use('lukas-reineke/indent-blankline.nvim')
 
-    -- hlchunk
-    use { "shellRaining/hlchunk.nvim" }
+    -- -- hlchunk
+    -- use { "shellRaining/hlchunk.nvim" }
 
 
     -- treesitter
