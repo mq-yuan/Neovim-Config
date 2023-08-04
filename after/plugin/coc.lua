@@ -1,4 +1,5 @@
-vim.g.coc_global_extensions = { 'coc-json', 'coc-vimlsp', 'coc-lua', 'coc-clangd', 'coc-pyright', 'coc-rust-analyzer' }
+vim.g.coc_global_extensions = { 'coc-json', 'coc-vimlsp', 'coc-lua', 'coc-clangd', 'coc-pyright', 'coc-rust-analyzer',
+    'coc-snippets' }
 
 vim.opt.updatetime = 100
 vim.opt.hidden = true

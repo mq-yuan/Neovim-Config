@@ -62,6 +62,9 @@ return require('packer').startup(function(use)
         tag = "*", -- Use for stability; omit to use `main` branch for the latest features
     })
 
+
+    --snippets
+    use('honza/vim-snippets')
     -- fun
     use('Eandrju/cellular-automaton.nvim')
 end)
