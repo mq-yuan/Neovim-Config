@@ -1,4 +1,6 @@
 vim.g["airline#extensions#tabline#enabled"] = 1
+vim.g["airline_left_sep"] = ''
+vim.g["airline_right_sep"] = ''
 
 -- vim.g["airline#extensions#tabline#buffer_idx_mode"] = 1
 vim.keymap.set("n", "<leader>1", "<Plug>AirlineSelectTab1")
