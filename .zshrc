@@ -49,5 +49,9 @@ eval "$(zoxide init zsh)"
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#lazygit
+# lazygit
 alias lg="lazygit"
+
+# nvim
+alias vim="nvim"
+alias nv="nvim"
