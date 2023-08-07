@@ -15,27 +15,29 @@ bufferline.setup {
             -- style = 'icon' | 'underline' | 'none',
             style = "icon",
         },
-        -- TODO: reset buf.path .. buf.name  <08/06, 2023, iLGZH> --
         name_formatter = function(buf) -- buf contains:
-            -- return buf.path .. buf.name
+            -- local fullpath vim.fn.bufname('%')
+            local relativepath = vim.fn.fnamemodify(buf.path, ':~:.')
+            local modifiedpath = string.gsub(relativepath, '(%w)[^/]*/', '%1/')
+            return modifiedpath
         end,
-        offsets = {
-            {
-                filetype = "NvimTree",
-                text = function()
-                    return vim.fn.getcwd()
-                end,
-                highlight = "Directory",
-                text_align = "left"
-            }
-        },
+        -- offsets = {
+        --     {
+        --         filetype = "NvimTree",
+        --         text = function()
+        --             return vim.fn.getcwd()
+        --         end,
+        --         highlight = "Directory",
+        --         text_align = "left"
+        --     }
+        -- },
         truncate_names = true,
         color_icons = true,
         show_buffer_close_icons = false,
         show_close_icon = false,
         enforce_regular_tabs = true,
         show_duplicate_prefix = false,
-        tab_size = 16,
+        tab_size = 22,
         padding = 0,
         -- separator_style = "thin",
         separator_style = { '', '' },
