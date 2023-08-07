@@ -12,7 +12,10 @@ return require('packer').startup(function(use)
 
     -- Colorscheme
     -- use({ 'rose-pine/neovim', as = 'rose-pine' })
-    use({ 'folke/tokyonight.nvim', as = 'tokyonight' })
+    use({
+        'folke/tokyonight.nvim',
+        as = 'tokyonight'
+    })
 
     -- -- FileTree
     -- use('preservim/nerdtree')
@@ -24,8 +27,21 @@ return require('packer').startup(function(use)
     -- UndoTree
     use('mbbill/undotree')
 
-    -- Vim Airline
-    use('vim-airline/vim-airline')
+    -- -- Vim Airline
+    -- use('vim-airline/vim-airline')
+
+    -- Vim status line
+    use({
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    })
+
+    -- Vim tab line
+    use({
+        'akinsho/bufferline.nvim',
+        tag = "*",
+        requires = 'nvim-tree/nvim-web-devicons'
+    })
 
     -- FZF
     use('junegunn/fzf')
@@ -42,13 +58,16 @@ return require('packer').startup(function(use)
     use('preservim/tagbar')
 
     -- COC
-    use { 'neoclide/coc.nvim', branch = 'release' }
+    use({
+        'neoclide/coc.nvim',
+        branch = 'release'
+    })
 
     -- -- indent-blankline
     -- use('lukas-reineke/indent-blankline.nvim')
 
     -- hlchunk
-    use { "shellRaining/hlchunk.nvim" }
+    use("shellRaining/hlchunk.nvim")
 
 
     -- treesitter
