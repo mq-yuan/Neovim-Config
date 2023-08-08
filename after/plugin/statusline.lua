@@ -1,3 +1,9 @@
+local function modifyFilePath()
+    local relativepath = vim.fn.fnamemodify(vim.fn.bufname('%'), ':~:.')
+    local modifiedpath = string.gsub(relativepath, '(%w)[^/]*/', '%1/')
+
+    return modifiedpath
+end
 require('lualine').setup {
     options = {
         icons_enabled = true,
@@ -28,6 +34,7 @@ require('lualine').setup {
     --     lualine_z = { 'location' }
     -- },
     sections = {
+        -- lualine_a = { modifyFilePath },
         lualine_a = { 'filename' },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = {},
