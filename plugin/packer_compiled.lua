@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/ymq/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/home/ymq/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   fzf = {
     loaded = true,
     path = "/home/ymq/.local/share/nvim/site/pack/packer/start/fzf",
