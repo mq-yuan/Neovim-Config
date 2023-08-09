@@ -84,6 +84,10 @@ return require('packer').startup(function(use)
 
     --snippets
     use('honza/vim-snippets')
+
     -- fun
     use('Eandrju/cellular-automaton.nvim')
+
+    -- coplit
+    use('github/copilot.vim')
 end)
