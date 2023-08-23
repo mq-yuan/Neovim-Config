@@ -1,9 +1,6 @@
 ## Introdution
 This project is originally intended for storing my Neovim configuration files. However, since the configuration process requires several additional dependencies, this project will also include some configuration-related information beyond Neovim.
 
-## Replace domestic sources(Optional)
-Ref [https://zhuanlan.zhihu.com/p/61228593]
-
 ## Install ZSH
 You need to set peoxy(You can find 'HOSTIP and PORT' in the LAN option in 'clash for windows') :
 ```sh
@@ -193,3 +190,37 @@ sudo install lazygit /usr/local/bin
 ```
 
 Finally, git clone this repositories
+
+
+## Optional
+
+###  Replace domestic sources
+Ref [https://zhuanlan.zhihu.com/p/61228593]
+
+### Set language
+If you are using wsl in China, maybe you will meet language question ` ERROR Locale dose not support UTF-8.`.
+
+You can try these command to adjust your wsl language.
+```
+sudo locale-gen en_US.UTF-8
+sudo update-locale LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8
+```
+### Clipboard
+When you are using wsl, you can add the following lines in 'init.lua'. 
+
+The configuration is for setting up clipboard integration in Neovim to work between wsl and windows.
+
+```
+vim.g.clipboard = {
+  name = 'WslClipboard',
+  copy = {
+    ['+'] = 'clip.exe',
+    ['*'] = 'clip.exe',
+  },
+  paste = {
+    ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+  },
+  cache_enabled = 0,
+}
+```
