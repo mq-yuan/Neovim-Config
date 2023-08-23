@@ -205,3 +205,22 @@ You can try these command to adjust your wsl language.
 sudo locale-gen en_US.UTF-8
 sudo update-locale LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8
 ```
+### Clipboard
+When you are using wsl, you can add the following lines in 'init.lua'. 
+
+The configuration is for setting up clipboard integration in Neovim to work between wsl and windows.
+
+```
+vim.g.clipboard = {
+  name = 'WslClipboard',
+  copy = {
+    ['+'] = 'clip.exe',
+    ['*'] = 'clip.exe',
+  },
+  paste = {
+    ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+  },
+  cache_enabled = 0,
+}
+```
