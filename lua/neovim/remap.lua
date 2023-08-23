@@ -43,3 +43,13 @@ vim.keymap.set("n", "<leader>LG", function()
     -- vim.cmd("res+5")
     vim.cmd("term time lazygit")
 end)
+
+-- clipboard to system board
+-- vim.keymap.set("n", "<leader>y", [["+y]])
+vim.keymap.set("v", "<leader>y", [["+y]])
+-- vim.keymap.set("n", "<leader>Y", [["+yg_]])
+-- vim.keymap.set("v", "<leader>Y", [["+yg_]])
+-- vim.keymap.set("n", "<leader>p", [["+p]])
+-- vim.keymap.set("v", "<leader>p", [["+p]])
+-- vim.keymap.set("n", "<leader>P", [["+P]])
+-- vim.keymap.set("v", "<leader>P", [["+P]])
