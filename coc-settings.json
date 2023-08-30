@@ -41,6 +41,5 @@
         "value": "\uf89f",
         "variable": "\ue71b"
     },
-    "clangd.path": "/usr/bin/clangd-12",
-    "clangd.enabled": true,
+    "clangd.path": "/usr/bin/clangd",
 }
