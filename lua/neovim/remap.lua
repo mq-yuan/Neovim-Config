@@ -33,9 +33,9 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- replace
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
--- find
-vim.keymap.set("n", "<leader>ff", [[:/<C-r><C-w><CR>]])
-vim.keymap.set("n", "<leader>FF", [[:?<C-r><C-w><CR>]])
+-- find * and #
+-- vim.keymap.set("n", "<leader>ff", [[:/<C-r><C-w><CR>]])
+-- vim.keymap.set("n", "<leader>FF", [[:?<C-r><C-w><CR>]])
 
 -- lazygit
 vim.keymap.set("n", "<leader>LG", function()
