@@ -81,12 +81,16 @@ return require('packer').startup(function(use)
         tag = "*", -- Use for stability; omit to use `main` branch for the latest features
     })
 
+    -- mini
+    use('echasnovski/mini.nvim')
+
 
     --snippets
     use('honza/vim-snippets')
 
-    -- fun
-    use('Eandrju/cellular-automaton.nvim')
+
+    -- which key
+    use('folke/which-key.nvim')
 
     -- coplit
     use('github/copilot.vim')
