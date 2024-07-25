@@ -22,6 +22,8 @@ vim.g.loaded_perl_provider = 0
 
 vim.opt.clipboard = 'unnamedplus'
 
+vim.g.python3_host_prog = "~/miniforge3/bin/python"
+
 
 -- vim.g.clipboard = {
 --     name = 'WslClipboard',

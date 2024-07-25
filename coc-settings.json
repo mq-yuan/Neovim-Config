@@ -4,12 +4,13 @@
     "suggest.enablePreselect": false,
     "coc.preferences.formatOnSave": true,
     "lua.enable": true,
-    "python.formatting.provider": "black",
+    "python.formatting.provider": "ruff",
     "python.linting.enabled": true,
-    "python.linting.pyflakesEnabled": true,
-    "python.linting.mypyEnabled": true,
+    "python.linting.ruffEnabled": true,
+    "pyright.organizeimports.provider": "ruff",
     "rust-analyzer.enable": true,
     "rust-analyzer.checkOnSave": false,
+    "clangd.path": "/usr/bin/clangd",
     "snippets.ultisnips.directories": [
         "$HOME/.config/nvim/Ultisnips/",
         "$HOME/.config/nvim/plugged/vim-snippets/UltiSnips/"
@@ -41,5 +42,4 @@
         "value": "\uf89f",
         "variable": "\ue71b"
     },
-    "clangd.path": "/usr/bin/clangd",
 }
