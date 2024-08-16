@@ -12,10 +12,12 @@ function ColorMyPencils(color)
         })
     end
     vim.cmd.colorscheme(color)
-
-    -- vim.cmd [[ set background=dark ]]
-    -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
-ColorMyPencils('tokyonight-night')
+return {
+    'folke/tokyonight.nvim',
+    name = 'tokyonight',
+    config = function()
+        ColorMyPencils('tokyonight-night')
+    end
+}
