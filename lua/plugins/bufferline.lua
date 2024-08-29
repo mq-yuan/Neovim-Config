@@ -10,7 +10,7 @@ vim.keymap.set("n", "<leader>7", ":BufferLineGoToBuffer 7<CR>")
 vim.keymap.set("n", "<leader>8", ":BufferLineGoToBuffer 8<CR>")
 vim.keymap.set("n", "<leader>9", ":BufferLineGoToBuffer 9<CR>")
 vim.keymap.set("n", "<leader>0", ":BufferLinePick<CR>")
-vim.keymap.set("n", "<leader>d", ":bd<CR>")
+vim.keymap.set("n", "<leader>bd", ":bd<CR>")
 
 return {
     'akinsho/bufferline.nvim',

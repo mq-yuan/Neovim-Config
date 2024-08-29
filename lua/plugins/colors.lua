@@ -1,23 +1,24 @@
-function ColorMyPencils(color)
-    color = color or "tokyonight" --rose-pine"
-
-    if (color == 'tokyonight-night') then
-        require("tokyonight").setup({
-            style = "night",
-            transparent = true,
-            styles = {
-                sidebars = "transparent",
-                floats = "transparent",
-            },
-        })
-    end
-    vim.cmd.colorscheme(color)
-end
-
 return {
-    'folke/tokyonight.nvim',
-    name = 'tokyonight',
-    config = function()
-        ColorMyPencils('tokyonight-night')
-    end
+    {
+        "rktjmp/lush.nvim"
+    },
+    {
+        "xero/miasma.nvim",
+        branch = "dev",
+        dependencies = {
+            "rktjmp/lush.nvim",
+            "rktjmp/shipwright.nvim",
+        },
+        lazy = false,
+        priority = 1000,
+    },
+    {
+        'folke/tokyonight.nvim',
+        lazy = false,
+        priority = 1000,
+        name = 'tokyonight',
+    },
+    {
+        'xiyaowong/transparent.nvim',
+    }
 }

@@ -28,8 +28,10 @@ vim.keymap.set("n", "<left>", ":vertical res-5<CR>")
 vim.keymap.set("n", "<right>", ":vertical res+5<CR>")
 
 -- visual move
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+-- vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+
 -- replace
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
@@ -92,4 +94,17 @@ vim.keymap.set("n", "<leader>pg", vim.cmd.Ag)
 -- treesitter-context
 vim.keymap.set("n", "[c", function()
     require("treesitter-context").go_to_context()
+end, { silent = true })
+
+--lua_snip
+local ls = require("luasnip")
+
+vim.keymap.set({ "i" }, "<C-K>", function() ls.expand() end, { silent = true })
+vim.keymap.set({ "i", "s" }, "<C-L>", function() ls.jump(1) end, { silent = true })
+vim.keymap.set({ "i", "s" }, "<C-J>", function() ls.jump(-1) end, { silent = true })
+
+vim.keymap.set({ "i", "s" }, "<C-E>", function()
+    if ls.choice_active() then
+        ls.change_choice(1)
+    end
 end, { silent = true })
