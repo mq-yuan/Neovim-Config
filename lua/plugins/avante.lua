@@ -5,8 +5,11 @@ return {
   version = false, -- set this if you want to always pull the latest change
   opts = {
     -- add any opts here
-    provider = "deepseek", -- Recommend using Claude
-    auto_suggestions_provider = "deepseek", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
+    provider = "aihubmix-gemini-2.0-flash", -- Recommend using Claude
+    auto_suggestions_provider = "aihubmix-gemini-2.0-flash-lite", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
+    behaviour = {
+      auto_suggestions = true
+    },
     vendors = {
       ["deepseek"] = {
         __inherited_from = "openai",
@@ -16,7 +19,22 @@ return {
         temperature = 0,
         max_tokens = 4096,
       },
-
+      ["aihubmix-gemini-2.0-flash-lite"] = {
+        __inherited_from = "openai",
+        api_key_name = "OPENAI_API_KEY",
+        endpoint = "https://aihubmix.com/v1",
+        model = "gemini-2.0-flash-lite-preview-02-05",
+        temperature = 0.3,
+        max_tokens = 1024 * 1024,
+      },
+      ["aihubmix-gemini-2.0-flash"] = {
+        __inherited_from = "openai",
+        api_key_name = "OPENAI_API_KEY",
+        endpoint = "https://aihubmix.com/v1",
+        model = "gemini-2.0-flash",
+        temperature = 0.3,
+        max_tokens = 1024 * 1024,
+      }
     },
     claude = {
       endpoint = "https://api.anthropic.com",
