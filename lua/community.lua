@@ -5,7 +5,7 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.completion.avante-nvim" },
   { import = "astrocommunity.motion.flash-nvim" },
+  { import = "astrocommunity.recipes.ai" },
   -- import/override with your plugins folder
 }
