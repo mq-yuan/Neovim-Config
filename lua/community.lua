@@ -8,5 +8,7 @@ return {
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.recipes.ai" },
   { import = "astrocommunity.completion.blink-cmp" },
+  { import = "astrocommunity.color.transparent-nvim" },
+  { import = "astrocommunity.colorscheme.kanagawa-nvim" },
   -- import/override with your plugins folder
 }

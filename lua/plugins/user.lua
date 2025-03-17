@@ -91,4 +91,22 @@ return {
       "nvim-tree/nvim-web-devicons"
     },
   },
+
+  -- hlchunk
+  {
+    "shellRaining/hlchunk.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    opts = {
+      chunk = {
+        enable = true
+      },
+      indent = {
+        enable = true
+      }
+    }
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    enabled = false
+  }
 }
