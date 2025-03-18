@@ -21,11 +21,9 @@ return {
         enabled = false, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           "python",
-          -- "go",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           "lua",
-          -- "python",
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
@@ -39,15 +37,15 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      -- "pyright",
       "ruff",
       "lua_ls",
       "rust_analyzer",
+      "clangd",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
-      -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      clangd = { capabilities = { offsetEncoding = "utf-8" } },
       -- pyright = {
       --   settings = {
       --     pyright = {
