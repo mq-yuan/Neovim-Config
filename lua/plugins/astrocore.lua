@@ -2,6 +2,30 @@
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
+function my_paste(reg)
+    return function(lines)
+        local content = vim.fn.getreg('"')
+        return vim.split(content, '\n')
+        
+    end
+end
+
+local system_opts = {}
+
+if vim.g.os ~= "Mac" then
+  system_opts.clipboard = {
+    name = 'WslClipboard',
+    copy = {
+      ['+'] = 'clip.exe',
+      ['*'] = 'clip.exe',
+    },
+    paste = {
+      ['+'] = my_paste('+'),
+      ['*'] = my_paste('*'),
+    },
+    cache_enabled = 0,
+  }
+end
 
 ---@type LazySpec
 return {
@@ -31,10 +55,11 @@ return {
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
       },
-      g = { -- vim.g.<key>
-        -- configure global vim variables (vim.g)
-        -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
-      },
+      g = system_opts,
+      -- g = { -- vim.g.<key>
+      --   -- configure global vim variables (vim.g)
+      --   -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
+      -- },
     },
     -- Mappings can be configured through AstroCore as well.
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized

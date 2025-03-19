@@ -1,5 +1,4 @@
-if true then return{} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-if true then return {} end
+if vim.g.os=="Mac" then return {} end
 return { -- override nvim-cmp plugin
   "hrsh7th/nvim-cmp",
   -- override the options table that is used in the `require("cmp").setup()` call

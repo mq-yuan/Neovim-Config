@@ -15,5 +15,17 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
+local system = vim.loop.os_uname().sysname
+if system == "Darwin" then
+  -- Mac 系统特定配置
+  vim.g.os = "Mac"
+elseif system == "Windows" or system == "Windows_NT" then
+  -- Windows 系统特定配置
+  vim.g.os = "Windows"
+elseif system == "Linux" then
+  -- Linux 系统特定配置
+  vim.g.os = "Linux"
+end
+
 require "lazy_setup"
 require "polish"

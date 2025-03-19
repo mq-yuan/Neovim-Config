@@ -6,9 +6,9 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.motion.flash-nvim" },
-  -- { import = "astrocommunity.completion.blink-cmp" },
   { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.colorscheme.kanagawa-nvim" },
   { import = "astrocommunity.pack.cpp" },
   -- import/override with your plugins folder
+   vim.g.os == "Mac" and { import = "astrocommunity.completion.blink-cmp" } or nil,
 }
