@@ -3,14 +3,6 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
-function my_paste(reg)
-    return function(lines)
-        local content = vim.fn.getreg('"')
-        return vim.split(content, '\n')
-        
-    end
-end
-
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
@@ -42,20 +34,6 @@ return {
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
-        -- This can be found in the `lua/lazy_setup.lua` file
-        --
-        clipboard = {
-          name = 'WslClipboard',
-          copy = {
-            ['+'] = 'clip.exe',
-            ['*'] = 'clip.exe',
-          },
-          paste = {
-            ['+'] = my_paste('+'),
-            ['*'] = my_paste('*'),
-          },
-          cache_enabled = 0,
-        },
       },
     },
     -- Mappings can be configured through AstroCore as well.

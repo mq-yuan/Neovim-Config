@@ -13,6 +13,7 @@ return {
         "rust_analyzer",
         -- "pyright",
         "pylsp",
+        "clangd",
         -- add more arguments for adding more language servers
       },
     },
