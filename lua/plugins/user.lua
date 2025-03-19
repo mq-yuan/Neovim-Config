@@ -48,6 +48,10 @@ return {
       -- add more custom luasnip configuration such as filetype extend or custom snippets
       local luasnip = require "luasnip"
       luasnip.filetype_extend("javascript", { "javascriptreact" })
+      -- load snippets paths: ~/.config/snippets
+      require("luasnip.loaders.from_vscode").lazy_load({
+        paths = { vim.fn.stdpath("config") .. "/snippets" },
+      })
     end,
   },
 
@@ -81,6 +85,13 @@ return {
     end,
   },
 
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    enabled = false
+  },
+
+
+  -- == User Plugins ==
   -- outline
   {
     'stevearc/aerial.nvim',
@@ -105,8 +116,4 @@ return {
       }
     }
   },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    enabled = false
-  }
 }

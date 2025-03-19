@@ -2,26 +2,27 @@
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
-function my_paste(reg)
-    return function(lines)
-        local content = vim.fn.getreg('"')
-        return vim.split(content, '\n')
-        
-    end
-end
+
 
 local system_opts = {}
 
+-- TODO: check whether remove the `reg` and `lines`.
 if vim.g.os ~= "Mac" then
+  local function my_paste(reg)
+    return function(lines)
+      local content = vim.fn.getreg '"'
+      return vim.split(content, "\n")
+    end
+  end
   system_opts.clipboard = {
-    name = 'WslClipboard',
+    name = "WslClipboard",
     copy = {
-      ['+'] = 'clip.exe',
-      ['*'] = 'clip.exe',
+      ["+"] = "clip.exe",
+      ["*"] = "clip.exe",
     },
     paste = {
-      ['+'] = my_paste('+'),
-      ['*'] = my_paste('*'),
+      ["+"] = my_paste "+",
+      ["*"] = my_paste "*",
     },
     cache_enabled = 0,
   }
@@ -46,6 +47,18 @@ return {
       virtual_text = false,
       underline = true,
     },
+    filetypes = {
+      extension = {
+        hlsl = "glsl",
+        foo = "fooscript",
+      },
+      filename = {
+        ["Foofile"] = "fooscript",
+      },
+      pattern = {
+        ["~/%.config/foo/.*"] = "fooscript",
+      },
+    },
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
@@ -54,12 +67,14 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
+
+        expandtab = true, -- sets vim.opt.expandtab: <tab> to <space>
+        tabstop = 4, -- sets vim.opt.tabstop: <tab> show 4 <space>
+        softtabstop = 4, -- sets vim.opt.softtabstop: <tab> show 4 <space> in insert mode
+        shiftwidth = 4, -- sets vim.opt.shiftwidth: shift show 4 <sapce>
       },
+      -- vim.g.<key>
       g = system_opts,
-      -- g = { -- vim.g.<key>
-      --   -- configure global vim variables (vim.g)
-      --   -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
-      -- },
     },
     -- Mappings can be configured through AstroCore as well.
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
@@ -88,6 +103,20 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+      },
+    },
+    -- Configuration table of session options for AstroNvim's session management powered by Resession
+    sessions = {
+      -- Configure auto saving
+      autosave = {
+        last = true, -- auto save last session
+        cwd = true, -- auto save session for each working directory
+      },
+      -- Patterns to ignore when saving sessions
+      ignore = {
+        dirs = {}, -- working directories to ignore sessions in
+        filetypes = { "gitcommit", "gitrebase" }, -- filetypes to ignore sessions
+        buftypes = {}, -- buffer types to ignore sessions
       },
     },
   },
