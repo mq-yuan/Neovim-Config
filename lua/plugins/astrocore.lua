@@ -3,7 +3,6 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
-
 local system_opts = {}
 
 -- TODO: check whether remove the `reg` and `lines`.
@@ -38,13 +37,13 @@ return {
       large_buf = { size = 1024 * 256, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
       autopairs = true, -- enable autopairs at start
       cmp = true, -- enable completion at start
-      diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
+      diagnostics = { virtual_text = true, virtual_lines = false }, -- diagnostic settings on startup
       highlighturl = true, -- highlight URLs at start
       notifications = true, -- enable notifications at start
     },
     -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
     diagnostics = {
-      virtual_text = false,
+      virtual_text = true,
       underline = true,
     },
     filetypes = {
@@ -73,7 +72,6 @@ return {
         softtabstop = 4, -- sets vim.opt.softtabstop: <tab> show 4 <space> in insert mode
         shiftwidth = 4, -- sets vim.opt.shiftwidth: shift show 4 <sapce>
       },
-      -- vim.g.<key>
       g = system_opts,
     },
     -- Mappings can be configured through AstroCore as well.

@@ -37,6 +37,7 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
+      "pylsp",
       "ruff",
       "lua_ls",
       "rust_analyzer",
@@ -46,21 +47,6 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       clangd = { capabilities = { offsetEncoding = "utf-8" } },
-      -- pyright = {
-      --   settings = {
-      --     pyright = {
-      --       -- Using Ruff's import organizer
-      --       disableOrganizeImports = true,
-      --     },
-      --     python = {
-      --       analysis = {
-      --         -- Ignore all files for analysis to exclusively use Ruff for linting
-      --         autoImportCompletions = true,
-      --         ignore = { "*" },
-      --       },
-      --     },
-      --   },
-      -- },
       pylsp = {
         settings = {
           pylsp = {
