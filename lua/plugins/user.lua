@@ -3,6 +3,34 @@
 
 ---@type LazySpec
 return {
+  -- == Users of Adding Plugins ==
+
+  -- outline
+  {
+    'stevearc/aerial.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons"
+    },
+  },
+
+  -- hlchunk
+  {
+    "shellRaining/hlchunk.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    opts = {
+      chunk = {
+        enable = true
+      },
+      indent = {
+        enable = true
+      }
+    }
+  },
+
+  -- == Users of Overriding Plugins ==
 
   -- == Examples of Adding Plugins ==
 
@@ -90,30 +118,4 @@ return {
     enabled = false
   },
 
-
-  -- == User Plugins ==
-  -- outline
-  {
-    'stevearc/aerial.nvim',
-    opts = {},
-    -- Optional dependencies
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-tree/nvim-web-devicons"
-    },
-  },
-
-  -- hlchunk
-  {
-    "shellRaining/hlchunk.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    opts = {
-      chunk = {
-        enable = true
-      },
-      indent = {
-        enable = true
-      }
-    }
-  },
 }

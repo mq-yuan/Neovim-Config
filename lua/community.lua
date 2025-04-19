@@ -10,5 +10,4 @@ return {
   { import = "astrocommunity.colorscheme.kanagawa-nvim" },
   { import = "astrocommunity.pack.cpp" },
   -- import/override with your plugins folder
-  { import = "astrocommunity.ai.kurama622-llm-nvim" },
 }
