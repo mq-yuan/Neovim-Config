@@ -9,6 +9,8 @@ return {
     ensure_installed = {
       "lua",
       "vim",
+      "yaml",
+      "jsonc",
       -- add more arguments for adding more treesitter parsers
       "c",
       "cpp",

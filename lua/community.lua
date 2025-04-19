@@ -7,7 +7,4 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.cpp" },
   -- import/override with your plugins folder
-  { import = "astrocommunity.color.transparent-nvim" },
-  { import = "astrocommunity.colorscheme.kanagawa-nvim" },
-   vim.g.os == "Mac" and { import = "astrocommunity.completion.blink-cmp" } or nil,
 }
