@@ -10,5 +10,5 @@ return {
   { import = "astrocommunity.colorscheme.kanagawa-nvim" },
   { import = "astrocommunity.pack.cpp" },
   -- import/override with your plugins folder
-   vim.g.os == "Mac" and { import = "astrocommunity.completion.blink-cmp" } or nil,
+  { import = "astrocommunity.ai.kurama622-llm-nvim" },
 }
