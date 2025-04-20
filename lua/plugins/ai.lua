@@ -305,55 +305,6 @@ return {
                 },
 
                 -- ====================================
-                -- ============ Completion ============
-                -- ====================================
-                Completion = {
-                    handler = tools.completion_handler,
-                    opts = {
-                        fetch_key = function()
-                            return vim.env.DEEPSEEK_API_KEY
-                        end,
-                        url = "https://api.deepseek.com/beta",
-                        model = "deepseek-chat",
-                        api_type = "openai",
-
-                        n_completions = 1,
-                        context_window = 16000,
-                        max_tokens = 256,
-                        keep_alive = -1,
-                        filetypes = {
-                            sh = false,
-                            zsh = false,
-                        },
-                        timeout = 10,
-                        default_filetype_enabled = true,
-                        auto_trigger = true,
-                        only_trigger_by_keywords = true,
-                        style = "blink.cmp",
-                        keymap = {
-                            virtual_text = {
-                                accept = {
-                                    mode = "i",
-                                    keys = "<A-a>",
-                                },
-                                next = {
-                                    mode = "i",
-                                    keys = "<A-n>",
-                                },
-                                prev = {
-                                    mode = "i",
-                                    keys = "<A-p>",
-                                },
-                                toggle = {
-                                    mode = "n",
-                                    keys = "<leader>cp",
-                                },
-                            },
-                        },
-                    },
-                },
-
-                -- ====================================
                 -- ============== Chat ================
                 -- ====================================
                 AttachToChat = {
@@ -396,6 +347,55 @@ return {
                         },
                     },
                 },
+
+                -- ====================================
+                -- ============ Completion ============
+                -- ====================================
+                Completion = {
+                    handler = tools.completion_handler,
+                    opts = {
+                        fetch_key = function()
+                            return vim.env.DEEPSEEK_API_KEY
+                        end,
+                        url = "https://api.deepseek.com/beta/completions",
+                        model = "deepseek-chat",
+                        api_type = "openai",
+
+                        n_completions = 1,
+                        context_window = 16000,
+                        max_tokens = 256,
+                        keep_alive = -1,
+                        filetypes = {
+                            sh = false,
+                            zsh = false,
+                        },
+                        timeout = 10,
+                        default_filetype_enabled = false,
+                        auto_trigger = true,
+                        only_trigger_by_keywords = true,
+                        style = "blink.cmp",
+                        keymap = {
+                            virtual_text = {
+                                accept = {
+                                    mode = "i",
+                                    keys = "<C-c>",
+                                },
+                                next = {
+                                    mode = "i",
+                                    keys = "<tab>",
+                                },
+                                prev = {
+                                    mode = "i",
+                                    keys = "<S-tab>",
+                                },
+                                toggle = {
+                                    mode = "n",
+                                    keys = "<leader>cp",
+                                },
+                            },
+                        },
+                    },
+                },
             }
         })
     end,
@@ -422,10 +422,26 @@ return {
                 },
             },
         },
-        -- close completion
+        -- -- close completion
         -- {
         --     "Saghen/blink.cmp",
         --     opts = {
+        --         completion = {
+        --             trigger = {
+        --                 prefetch_on_insert = false,
+        --                 -- allow triggering by white space
+        --                 show_on_blocked_trigger_characters = {},
+        --             },
+        --         },
+        --
+        --         keymap = {
+        --             ["<C-y>"] = {
+        --                 function(cmp)
+        --                     cmp.show({ providers = { "llm" } })
+        --                 end,
+        --             },
+        --         },
+        --
         --         sources = {
         --             default = { "llm" },
         --             providers = {
