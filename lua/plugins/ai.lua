@@ -161,7 +161,7 @@ return {
                 diff = {
                     layout = "vertical", -- vertical|horizontal split for default provider
                     opts = { "internal", "filler", "closeoff", "algorithm:patience", "followwrap", "linematch:120" },
-                    provider = "mini_diff", -- default|mini_diff
+                    provider = "default", -- default|mini_diff
                 },
             },
             -- history_path = "/tmp/llm-history",
@@ -405,7 +405,7 @@ return {
             opts = {
                 mappings = {
                     n = {
-                        ["<Leader>ac"] = { "<CMD>LLMSessionToggle<CR>", desc = "Toggle LLM.nvim session" },
+                        ["<Leader>ag"] = { "<CMD>LLMSessionToggle<CR>", desc = "Toggle LLM.nvim session" },
                         ["<Leader>at"] = { "<CMD>LLMAppHandler Translate<CR>", desc = "Toggle LLM.nvim Translate session" },
                         ["<Leader>gm"] = { "<CMD>LLMAppHandler CommitMsg<CR>", desc = "Generate AI Commit Message by LLM.nvim" },
                     },
