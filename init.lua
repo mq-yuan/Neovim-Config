@@ -26,6 +26,7 @@ elseif system == "Linux" then
   -- Linux 系统特定配置
   vim.g.os = "Linux"
 end
+-- terminal <C-\><C-n> to back normal mode
 
 require "lazy_setup"
 require "polish"

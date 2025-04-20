@@ -3,30 +3,6 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
-local system_opts = {}
-
--- TODO: check whether remove the `reg` and `lines`.
-if vim.g.os ~= "Mac" then
-  local function my_paste(reg)
-    return function(lines)
-      local content = vim.fn.getreg '"'
-      return vim.split(content, "\n")
-    end
-  end
-  system_opts.clipboard = {
-    name = "WslClipboard",
-    copy = {
-      ["+"] = "clip.exe",
-      ["*"] = "clip.exe",
-    },
-    paste = {
-      ["+"] = my_paste "+",
-      ["*"] = my_paste "*",
-    },
-    cache_enabled = 0,
-  }
-end
-
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
@@ -72,7 +48,6 @@ return {
         softtabstop = 4, -- sets vim.opt.softtabstop: <tab> show 4 <space> in insert mode
         shiftwidth = 4, -- sets vim.opt.shiftwidth: shift show 4 <sapce>
       },
-      g = system_opts,
     },
     -- Mappings can be configured through AstroCore as well.
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
@@ -102,6 +77,10 @@ return {
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
       },
+      v = {
+        -- setting clipboard
+        ["<Leader>y"] = {"+y", desc = "Copy to clipboard"},
+      }
     },
     -- Configuration table of session options for AstroNvim's session management powered by Resession
     sessions = {

@@ -77,6 +77,7 @@ return {
             fetch_key = function()
                 return vim.env.OPENAI_API_KEY
             end,
+            enable_trace = true,
 
             -- set temperature and assistant
             temperature = 0.3,
@@ -269,10 +270,10 @@ return {
                     handler = tools.completion_handler,
                     opts = {
                         fetch_key = function()
-                            return vim.env.XAI_API_KEY
+                            return vim.env.DEEPSEEK_API_KEY
                         end,
-                        url = "https://api.x.ai/v1/chat/completions",
-                        model = "grok-3-beta",
+                        url = "https://api.deepseek.com/beta",
+                        model = "deepseek-chat",
                         api_type = "openai",
 
                         n_completions = 1,
@@ -385,6 +386,24 @@ return {
                     },
                 },
             },
-        }
+        },
+        -- close completion
+        -- {
+        --     "Saghen/blink.cmp",
+        --     opts = {
+        --         sources = {
+        --             default = { "llm" },
+        --             providers = {
+        --                 llm = {
+        --                     name = "llm",
+        --                     module = "llm.common.completion.frontends.blink",
+        --                     timeout_ms = 10000,
+        --                     score_offset = 100,
+        --                     async = true,
+        --                 }
+        --             }
+        --         }
+        --     }
+        -- }
     }
 }
