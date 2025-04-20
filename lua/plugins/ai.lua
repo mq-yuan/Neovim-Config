@@ -71,18 +71,76 @@ return {
     config = function ()
         local tools = require("llm.tools")
         require("llm").setup({
-            url = "https://aihubmix.com/v1/chat/completions",
-            model = "gemini-2.0-flash",
-            api_type = "openai",
-            fetch_key = function()
-                return vim.env.OPENAI_API_KEY
-            end,
-            enable_trace = true,
+            -- enable_trace = true,
 
             -- set temperature and assistant
             temperature = 0.3,
             top_p = 0.7,
             prompt = "You are a helpful chinese assistant.",
+
+            -- set models
+            models = {
+                {
+                    name = "grok-3",
+                    fetch_key = function()
+                        return vim.env.XAI_API_KEY
+                    end,
+                    url = "https://api.x.ai/v1/chat/completions",
+                    model = "grok-3-beta",
+                    api_type = "openai",
+                    max_tokens = 128000,
+                },
+                {
+                    name = "gemini-2.0-flash",
+                    url = "https://aihubmix.com/v1/chat/completions",
+                    model = "gemini-2.0-flash",
+                    api_type = "openai",
+                    fetch_key = function()
+                        return vim.env.GEMINI_API_KEY
+                    end,
+                    max_tokens = 1048576
+                },
+                {
+                    name = "gemini-2.5-flash",
+                    url = "https://aihubmix.com/v1/chat/completions",
+                    model = "gemini-2.5-flash-preview-04-17-nothink",
+                    api_type = "openai",
+                    fetch_key = function()
+                        return vim.env.GEMINI_API_KEY
+                    end,
+                    max_tokens = 128000,
+                },
+                {
+                    name = "gemini-2.5-flash-thinking",
+                    url = "https://aihubmix.com/v1/chat/completions",
+                    model = "gemini-2.5-flash-preview-04-17",
+                    api_type = "openai",
+                    fetch_key = function()
+                        return vim.env.GEMINI_API_KEY
+                    end,
+                    max_tokens = 128000,
+                },
+                {
+                    name = "deepseek-chat",
+                    fetch_key = function()
+                        return vim.env.DEEPSEEK_API_KEY
+                    end,
+                    url = "https://api.deepseek.com/chat/completions",
+                    model = "deepseek-chat",
+                    api_type = "openai",
+                    max_tokens = 800000,
+                },
+                {
+                    name = "deepseek-R1",
+                    fetch_key = function()
+                        return vim.env.DEEPSEEK_API_KEY
+                    end,
+                    url = "https://api.deepseek.com/chat/completions",
+                    model = "deepseek-reasoner",
+                    api_type = "openai",
+                    max_tokens = 800000,
+                },
+            },
 
             -- set ui
             spinner = {
@@ -137,6 +195,8 @@ return {
                 -- only works when "save_session = true"
                 ["Input:HistoryNext"] = { mode = {"n", "i"}, key = "<C-j>" },
                 ["Input:HistoryPrev"] = { mode = {"n", "i"}, key = "<C-k>" },
+                ["Input:ModelsNext"] = { mode = {"n", "i"}, key = "<C-h>" },
+                ["Input:ModelsPrev"] = { mode = {"n", "i"}, key = "<C-l>" },
 
                 -- The keyboard mapping for the output window in "split" style.
                 ["Output:Ask"]        = { mode = "n", key = "i" },
@@ -158,7 +218,6 @@ return {
                 OptimizeCode = {
                     handler = tools.side_by_side_handler,
                     opts = {
-                        -- streaming_handler = local_llm_streaming_handler,
                         left = {
                             focusable = false,
                         },
@@ -167,12 +226,6 @@ return {
                 OptimCompare = {
                     handler = tools.action_handler,
                     opts = {
-                        fetch_key = function()
-                            return vim.env.XAI_API_KEY
-                        end,
-                        url = "https://api.x.ai/v1/chat/completions",
-                        model = "grok-3-beta",
-                        api_type = "openai",
                         language = "Chinese",
                     },
                 },
@@ -189,12 +242,6 @@ return {
                     handler = tools.flexi_handler,
                     prompt = prompts.CodeExplain,
                     opts = {
-                        fetch_key = function()
-                            return vim.env.XAI_API_KEY
-                        end,
-                        url = "https://api.x.ai/v1/chat/completions",
-                        model = "grok-3-beta",
-                        api_type = "openai",
                         enter_flexible_window = true,
                     },
                 },
@@ -202,12 +249,6 @@ return {
                     prompt = prompts.DocString,
                     handler = tools.action_handler,
                     opts = {
-                        fetch_key = function()
-                            return vim.env.XAI_API_KEY
-                        end,
-                        url = "https://api.x.ai/v1/chat/completions",
-                        model = "grok-3-beta",
-                        api_type = "openai",
                         only_display_diff = true,
                         templates = {
                             lua = [[- For the Lua language, you should use the LDoc style.
@@ -331,12 +372,6 @@ return {
                     handler = tools.flexi_handler,
                     prompt = prompts.CommitMsg,
                     opts = {
-                        fetch_key = function()
-                            return vim.env.XAI_API_KEY
-                        end,
-                        url = "https://api.x.ai/v1/chat/completions",
-                        model = "grok-3-beta",
-                        api_type = "openai",
                         enter_flexible_window = true,
                         apply_visual_selection = false,
                         win_opts = {
