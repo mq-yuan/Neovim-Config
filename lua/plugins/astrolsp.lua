@@ -37,7 +37,7 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      "pylsp",
+      "basedpyright",
       "ruff",
       "lua_ls",
       "rust_analyzer",
@@ -47,25 +47,41 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       clangd = { capabilities = { offsetEncoding = "utf-8" } },
-      pylsp = {
+      -- basedpyright config https://docs.basedpyright.com/latest/configuration/config-files/#type-check-diagnostics-settings
+      basedpyright = {
+        before_init = function(_, c)
+          if not c.settings then c.settings = {} end
+          if not c.settings.python then c.settings.python = {} end
+          c.settings.python.pythonPath = vim.fn.exepath "python"
+        end,
         settings = {
-          pylsp = {
-            plugins = {
-              pyflakes = { enabled = false },  -- 禁用类型检查
-              pycodestyle = { enabled = false }, -- 禁用格式化
-              autopep8 = { enabled = false },    -- 禁用 autopep8 格式化
-              yapf = { enabled = false },        -- 禁用 yapf 格式化
-              black = { enabled = false },       -- 禁用 black 格式化
-              jedi_completion = { enabled = true }, -- 启用 Jedi 补全
-            }
-          }
-        }
+          basedpyright = {
+            disableOrganizeImports = true,
+            analysis = {
+              typeCheckingMode = "basic",
+              diagnosticMode = "openFilesOnly",
+              autoImportCompletions = true,
+              diagnosticSeverityOverrides = {
+                reportUnusedImport = "information",
+                reportUnusedFunction = "information",
+                reportUnusedVariable = "information",
+                reportGeneralTypeIssues = "none",
+                reportOptionalMemberAccess = "none",
+                reportOptionalSubscript = "none",
+                reportPrivateImportUsage = "none",
+                reportAttributeAccessIssue = "none",
+                reportArgumentType = "none",
+              },
+            },
+          },
+        },
       },
+      -- ruff config 
       ruff = {
         trace = "messages",
         init_options = {
           settings = {
-            logLevel = "debug",
+            logLevel = "info",
           },
         },
       },

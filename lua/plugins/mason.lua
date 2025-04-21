@@ -14,7 +14,7 @@ return {
         "lua-language-server",
         "ruff",
         "rust-analyzer",
-        "python-lsp-server",
+        "basedpyright",
         "clangd",
 
         -- install formatters
