@@ -204,7 +204,7 @@ return {
                 ["Output:Resend"]     = { mode = "n", key = "<C-r>" },
 
                 -- The keyboard mapping for the output and input windows in "float" style.
-                ["Session:Close"]     = { mode = "n", key = {"<esc>", "Q"} },
+                ["Session:Close"]     = { mode = "n", key = {"<esc>", "q"} },
 
                 -- Focus
                 ["Focus:Input"]       = { mode = "n", key = {"i", "<C-w>"} },
