@@ -69,8 +69,6 @@ return {
                 reportOptionalMemberAccess = "none",
                 reportOptionalSubscript = "none",
                 reportPrivateImportUsage = "none",
-                reportAttributeAccessIssue = "none",
-                reportArgumentType = "none",
               },
             },
           },
